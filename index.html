@@ -579,6 +579,15 @@
     var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){resize();seed();},200);});
   }
 
+  /* 背景動画/ヒーロー動画を確実に再生(autoplayが効かない端末向けフォールバック) */
+  (function(){
+    var vids=[document.querySelector('.bgvid'),document.querySelector('.vcard video')];
+    function go(){vids.forEach(function(v){if(v){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}});}
+    go();
+    document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});
+    ['touchstart','pointerdown','click','scroll','keydown'].forEach(function(ev){window.addEventListener(ev,go,{passive:true});});
+  })();
+
   /* 流れるビッグテキスト */
   var bf=document.getElementById('bigflow'); if(bf){bf.innerHTML+=bf.innerHTML;}
 
