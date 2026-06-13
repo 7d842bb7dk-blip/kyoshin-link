@@ -374,7 +374,9 @@
       <span class="stk s1">若い人、多いです🔥</span>
       <span class="stk s3">仲の良さ自慢です</span>
       <div class="frame">
-        <img src="assets/IMG_9021.JPG" alt="京伸で働くスタッフ" width="1200" height="800">
+        <video autoplay muted loop playsinline preload="metadata"
+               poster="assets/IMG_9021.JPG"
+               src="https://www.f-kyo-shin.co.jp/images/top/movie.mp4"></video>
         <span class="ring" aria-hidden="true"></span>
       </div>
       <span class="stk s2">未経験も歓迎✌️</span>
@@ -443,6 +445,7 @@
       <img src="assets/IMG_9022.JPG" alt="" data-name="休憩中のひとコマ" data-meta="とにかく仲がいい" loading="lazy">
       <img src="assets/IMG_9025.JPG" alt="" data-name="職人の技も学べる" data-meta="ベテランの背中を見て育つ" loading="lazy">
       <img src="assets/IMG_9030.JPG" alt="" data-name="毎朝みんなで朝礼" data-meta="ここから一日がはじまる" loading="lazy">
+      <img src="assets/IMG_9033.JPG" alt="" data-name="さあ、行こう" data-meta="あなたの活躍を待っています" loading="lazy">
       <div class="shade" aria-hidden="true"></div>
       <div class="dots" id="dots" aria-hidden="true"></div>
       <span class="more">Instagram →</span>
@@ -636,6 +639,15 @@
     addEventListener('load',size);
     setTimeout(size,300);
     var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,200);});
+  })();
+
+  /* ヒーロー動画を確実に再生(autoplayが効かない端末向けフォールバック) */
+  (function(){
+    var v=document.querySelector('.vcard video'); if(!v) return;
+    function go(){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}
+    go();
+    document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});
+    ['touchstart','pointerdown','click','scroll'].forEach(function(ev){window.addEventListener(ev,go,{passive:true});});
   })();
 
   /* 流れるビッグテキスト */
