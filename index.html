@@ -68,14 +68,15 @@
   .wrap{max-width:480px;margin:0 auto;padding:0 18px 40px;position:relative;z-index:1}
 
   /* ===== アンビエント・レーザー背景 ===== */
-  #fx{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%}
+  #fx{position:fixed;inset:0;z-index:-2;pointer-events:none;display:block}
+
   .fxlines{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
   .fxlines::before{
-    content:"";position:absolute;top:-40%;left:-20%;width:140%;height:3px;
-    background:linear-gradient(90deg,transparent,rgba(255,38,48,0) 18%,rgba(255,38,48,1) 50%,rgba(255,38,48,0) 82%,transparent);
-    box-shadow:0 0 34px rgba(255,38,48,.95);
+    content:"";position:absolute;top:-40%;left:-20%;width:140%;height:2px;
+    background:linear-gradient(90deg,transparent,rgba(255,38,48,0) 20%,rgba(255,38,48,.85) 50%,rgba(255,38,48,0) 80%,transparent);
+    box-shadow:0 0 22px rgba(255,38,48,.8);
     transform:rotate(28deg);
-    animation:scanline 5.5s ease-in-out infinite;
+    animation:scanline 7s ease-in-out infinite;
   }
   .fxlines::after{
     content:"";position:absolute;bottom:-30%;right:-20%;width:140%;height:1px;
@@ -94,14 +95,6 @@
     70%{opacity:0}100%{opacity:0}
   }
 
-  /* ===== 背景動画(レーザー火花を薄く全画面で流す) ===== */
-  .bgvid{
-    position:fixed;inset:0;z-index:-3;pointer-events:none;
-    width:100%;height:100%;object-fit:cover;
-    opacity:.9;mix-blend-mode:screen;
-    filter:contrast(1.25) saturate(1.45) brightness(1.2);
-  }
-
   /* ===== 出現アニメ ===== */
   .rv{opacity:0;transform:translateY(26px) scale(.98)}
   .rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -111,7 +104,7 @@
   /* ===== ヒーロー ===== */
   .hero{padding-top:30px;text-align:center}
   .logo{display:flex;align-items:center;justify-content:center;gap:11px}
-  .logo .hexmark{width:50px;height:50px;flex:0 0 auto;filter:drop-shadow(0 0 12px rgba(255,38,48,.45))}
+  .logo .hexmark{width:50px;height:50px;flex:0 0 auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
   .logo .hexmark polygon{transform-box:fill-box;transform-origin:center;opacity:0;animation:assemble .6s cubic-bezier(.2,.9,.2,1) forwards}
   .logo .hexmark polygon:nth-child(1){animation-delay:.05s}
   .logo .hexmark polygon:nth-child(2){animation-delay:.13s}
@@ -131,11 +124,15 @@
     -webkit-mask-size:250% 100%;mask-size:250% 100%;
     -webkit-mask-position:100% 0;mask-position:100% 0;
     animation:wordwipe .7s ease-out .5s forwards;
+    /* 白い縁取りで背景と文字の境目を出す */
+    text-shadow:
+      -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
+      0 -2px 0 #fff, 0 2px 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff,
+      -1px -1px 0 #fff, 1px 1px 0 #fff;
   }
   @keyframes wordwipe{from{opacity:0;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
-  .logo .word .red{color:#fff;text-shadow:0 0 18px rgba(255,38,48,.0)}
-  .logo .word .red{color:var(--red)}
-  .logo .word .blk{color:#fff}
+  .logo .word .red{color:#e60b10}
+  .logo .word .blk{color:#16181d}
   .logo .word .hyp{width:.52em;height:.24em;margin:0 .04em;display:block}
   .hero .corp{margin-top:12px;font-size:13px;font-weight:700;letter-spacing:.3em;text-indent:.3em;color:var(--ink)}
   .hero .corp small{display:block;margin-top:3px;font-size:10.5px;font-weight:500;color:var(--dim);letter-spacing:.16em;text-indent:.16em}
@@ -303,23 +300,13 @@
   .dock .form{background:#fff;color:#0c0e11}
   .dock svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
+  /* 低減設定は無視:アニメーションは常に有効 */
   @media (prefers-reduced-motion:reduce){
-    #fx{display:none}
-    .bgvid{display:none}
-    .fxlines::before,.fxlines::after{animation:none;opacity:0}
-    .logo .hexmark polygon{animation:none;opacity:1}
-    .logo .word{animation:none;opacity:1;-webkit-mask-image:none;mask-image:none}
-    .bigflow .in{animation:none}
-    .stk{animation:none}
-    .show img.act{animation:none;transform:none}
-    .rv{opacity:1;transform:none}
-    .btn,.pick,.sns a,.rcard img,.pick .ph img{transition:none}
+    /* intentionally empty — ユーザー要望により低減効果を無視 */
   }
 </style>
 </head>
 <body>
-<video class="bgvid" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
-       src="https://www.f-kyo-shin.co.jp/images/top/movie.mp4"></video>
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="fxlines" aria-hidden="true"></div>
 <div class="wrap">
@@ -328,14 +315,16 @@
   <header class="hero">
     <h1 class="logo">
       <svg class="hexmark" viewBox="0 0 100 100" role="img" aria-label="京伸ロゴマーク">
-        <polygon fill="#ff2630" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
-        <polygon fill="#ff2630" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
-        <polygon fill="#ff2630" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
-        <polygon fill="#ffffff" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
-        <polygon fill="#ffffff" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
-        <polygon fill="#ffffff" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+        <g stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">
+        <polygon fill="#e60b10" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
+        <polygon fill="#e60b10" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
+        <polygon fill="#e60b10" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
+        <polygon fill="#16181d" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
+        <polygon fill="#16181d" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
+        <polygon fill="#16181d" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+        </g>
       </svg>
-      <span class="word"><span class="red">Kyo</span><svg class="hyp" viewBox="0 0 30 12" aria-hidden="true"><polygon fill="#ff2630" points="2,11 8,1 28,1"/><polygon fill="#ffffff" points="2,11 28,1 22,11"/></svg><span class="blk">shin</span></span>
+      <span class="word"><span class="red">Kyo</span><svg class="hyp" viewBox="0 0 30 12" aria-hidden="true"><g stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"><polygon fill="#e60b10" points="2,11 8,1 28,1"/><polygon fill="#16181d" points="2,11 28,1 22,11"/></g></svg><span class="blk">shin</span></span>
     </h1>
     <div class="corp">株式会社 京伸<small>KYO-SHIN CO., LTD.|大阪・精密板金</small></div>
     <p class="copy">
@@ -515,12 +504,14 @@
 
   <footer>
     <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true" style="margin:0 auto 8px;display:block">
-      <polygon fill="#ff2630" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
-      <polygon fill="#ff2630" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
-      <polygon fill="#ff2630" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
-      <polygon fill="#e7e9ec" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
-      <polygon fill="#e7e9ec" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
-      <polygon fill="#e7e9ec" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+      <g stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round">
+      <polygon fill="#e60b10" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
+      <polygon fill="#e60b10" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
+      <polygon fill="#e60b10" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
+      <polygon fill="#16181d" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
+      <polygon fill="#16181d" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
+      <polygon fill="#16181d" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+      </g>
     </svg>
     <div class="en">KYO-SHIN — PRECISION SHEET METAL, OSAKA</div>
     <div>© 株式会社京伸</div>
@@ -544,48 +535,90 @@
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* レーザーの火花が漂う背景 */
-  var cv = document.getElementById('fx');
-  if(cv && !reduce){
-    var ctx = cv.getContext('2d');
-    var DPR = Math.min(window.devicePixelRatio||1, 2);
-    var W,H,parts;
-    function resize(){ W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
-    function seed(){
-      var n=Math.round((innerWidth*innerHeight)/15000); n=Math.max(34,Math.min(90,n));
-      parts=[];
-      for(var i=0;i<n;i++){
-        parts.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*2.3+0.6)*DPR,
-          vy:-(Math.random()*0.5+0.09)*DPR,vx:(Math.random()-0.5)*0.32*DPR,
-          red:Math.random()<0.74,a:Math.random()*0.7+0.38,tw:Math.random()*Math.PI*2});
+  /* ===== 火花バースト背景(写真イメージ:放射状＋横流れ) ===== */
+  (function(){
+    var cv=document.getElementById('fx'); if(!cv) return;
+    var ctx=cv.getContext('2d');
+    var DPR=Math.min(window.devicePixelRatio||1,2);
+    var W=0,H=0,sparks=[],last=0;
+
+    function size(){
+      W=cv.width=Math.max(1,Math.floor(innerWidth*DPR));
+      H=cv.height=Math.max(1,Math.floor(innerHeight*DPR));
+      cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+    }
+
+    function color(t){ // t:0=白熱 →1=赤
+      if(t<0.25) return '255,'+Math.round(245-t*120)+','+Math.round(210-t*500<0?40:210-t*500)+'';
+      if(t<0.6)  return '255,'+Math.round(200-t*150)+',40';
+      return '255,'+Math.round(120-t*80)+',20';
+    }
+
+    function burst(x,y){
+      // 一点から放射状に飛ぶ火花の束
+      var count=6+Math.floor(Math.random()*7);
+      var baseAng=Math.random()*Math.PI*2;       // どの向きにも飛ぶ
+      var spread=0.8+Math.random()*1.6;          // 広がりもバラつかせる
+      for(var i=0;i<count;i++){
+        var ang=baseAng + (Math.random()-0.5)*spread;
+        var sp=(Math.random()*7+3)*DPR;
+        sparks.push({
+          x:x,y:y,
+          vx:Math.cos(ang)*sp*(Math.random()*0.6+0.7),
+          vy:Math.sin(ang)*sp,
+          life:0, max:32+Math.random()*46,
+          r:(Math.random()*1.3+0.7)*DPR,
+          hot:Math.random()
+        });
       }
     }
-    function draw(){
-      ctx.clearRect(0,0,W,H);
-      for(var i=0;i<parts.length;i++){
-        var p=parts[i]; p.y+=p.vy; p.x+=p.vx; p.tw+=0.025;
-        if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
-        var tw=0.55+0.45*Math.sin(p.tw);
-        var col=p.red?'255,48,56':'200,206,214';
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle='rgba('+col+','+(p.a*tw)+')';
-        ctx.shadowBlur=p.red?18*DPR:5*DPR;
-        ctx.shadowColor=p.red?'rgba(255,48,56,.95)':'rgba(255,255,255,.55)';
+
+    function frame(t){
+      if(!last)last=t; var dt=Math.min(40,t-last); last=t;
+      // 残像を残して尾を引かせる
+      ctx.globalCompositeOperation='source-over';
+      ctx.fillStyle='rgba(12,14,17,0.30)';
+      ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation='lighter';
+
+      // 発生:画面のランダムな位置で散発的にバースト
+      var n=1+Math.floor(Math.random()*2);
+      for(var e=0;e<n;e++){
+        if(Math.random()<0.55){
+          burst(Math.random()*W, H*(0.12+Math.random()*0.76));
+        }
+      }
+
+      for(var i=sparks.length-1;i>=0;i--){
+        var p=sparks[i];
+        var px=p.x, py=p.y;
+        p.vy+=0.12*DPR;          // 重力で落ちる
+        p.vx*=0.992; p.vy*=0.992;// 空気抵抗
+        p.x+=p.vx; p.y+=p.vy; p.life++;
+        var f=1-(p.life/p.max);
+        if(p.life>=p.max || p.x<-20||p.x>W+20||p.y>H+30){ sparks.splice(i,1); continue; }
+        var col=color(p.hot*0.7+(1-f)*0.3);
+        // 尾
+        ctx.strokeStyle='rgba('+col+','+(f*0.85)+')';
+        ctx.lineWidth=p.r;
+        ctx.beginPath(); ctx.moveTo(px,py); ctx.lineTo(p.x,p.y); ctx.stroke();
+        // 先端の輝き
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.9,0,Math.PI*2);
+        ctx.fillStyle='rgba('+col+','+f+')';
+        ctx.shadowBlur=8*DPR; ctx.shadowColor='rgba(255,170,40,'+(f*0.8)+')';
         ctx.fill(); ctx.shadowBlur=0;
       }
-      requestAnimationFrame(draw);
+      // 上限(負荷対策)
+      if(sparks.length>900) sparks.splice(0,sparks.length-900);
+      requestAnimationFrame(frame);
     }
-    resize(); seed(); draw();
-    var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){resize();seed();},200);});
-  }
 
-  /* 背景動画/ヒーロー動画を確実に再生(autoplayが効かない端末向けフォールバック) */
-  (function(){
-    var vids=[document.querySelector('.bgvid'),document.querySelector('.vcard video')];
-    function go(){vids.forEach(function(v){if(v){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}});}
-    go();
-    document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});
-    ['touchstart','pointerdown','click','scroll','keydown'].forEach(function(ev){window.addEventListener(ev,go,{passive:true});});
+    size();
+    requestAnimationFrame(frame);
+    // サイズ確定が遅れる環境向けに再計測
+    addEventListener('load',size);
+    setTimeout(size,300);
+    var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,200);});
   })();
 
   /* 流れるビッグテキスト */
@@ -606,7 +639,7 @@
     capName.textContent=imgs[n].dataset.name||''; capMeta.textContent=imgs[n].dataset.meta||'';
   }
   setSlide(0);
-  if(!reduce){setInterval(function(){i=(i+1)%imgs.length;setSlide(i);},4400);}
+  setInterval(function(){i=(i+1)%imgs.length;setSlide(i);},4400);
 })();
 </script>
 </body>
