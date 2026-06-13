@@ -94,6 +94,16 @@
     70%{opacity:0}100%{opacity:0}
   }
 
+  /* ===== 背景動画(レーザー火花を薄く全画面で流す) ===== */
+  .bgvid{
+    position:fixed;inset:0;z-index:-3;pointer-events:none;
+    width:100%;height:100%;object-fit:cover;
+    opacity:.15;filter:contrast(1.05) saturate(1.06);
+  }
+  /* 動画の上に薄い暗幕を重ね、文字の可読性を担保 */
+  .bgvid-veil{position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 30%,rgba(12,14,17,.45),rgba(12,14,17,.82))}
+
   /* ===== 出現アニメ ===== */
   .rv{opacity:0;transform:translateY(26px) scale(.98)}
   .rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -297,6 +307,7 @@
 
   @media (prefers-reduced-motion:reduce){
     #fx{display:none}
+    .bgvid{display:none}
     .fxlines::before,.fxlines::after{animation:none;opacity:0}
     .logo .hexmark polygon{animation:none;opacity:1}
     .logo .word{animation:none;opacity:1;-webkit-mask-image:none;mask-image:none}
@@ -309,6 +320,9 @@
 </style>
 </head>
 <body>
+<video class="bgvid" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+       src="https://www.f-kyo-shin.co.jp/images/top/movie.mp4"></video>
+<div class="bgvid-veil" aria-hidden="true"></div>
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="fxlines" aria-hidden="true"></div>
 <div class="wrap">
