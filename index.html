@@ -317,6 +317,12 @@
   .ig .follow{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#c32aa3;font-weight:900;font-size:15.5px;padding:15px;border-radius:999px;letter-spacing:.03em}
   .ig .follow svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2}
 
+  /* Instagram 実フィード(横スワイプ) */
+  .igfeed{display:flex;gap:12px;margin:14px -18px 6px;padding:2px 18px 4px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .igfeed::-webkit-scrollbar{display:none}
+  .igpost{flex:0 0 300px;width:300px;height:560px;scroll-snap-align:start;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--card-bd);box-shadow:var(--shadow);background:#fff}
+  .igpost iframe{width:100%;height:100%;border:0;display:block}
+
   /* ===== 採用 ===== */
   .recruit{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(255,38,48,.45);box-shadow:0 0 40px rgba(255,38,48,.15) inset,var(--shadow)}
   .recruit .ph{position:relative;aspect-ratio:16/11}
@@ -422,17 +428,21 @@
         <span class="iglogo" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="#fff" stroke="none"/></svg></span>
         <span class="at">@kyoshin.osaka<small>京伸の“素”の毎日を発信中</small></span>
       </div>
-      <p>現場のリアル・仲間のこと・新しい設備のこと。<br>京伸の空気感がいちばん伝わるのはInstagramです📸</p>
-      <div class="strip">
-        <img src="assets/IMG_9027.JPG" alt="" loading="lazy">
-        <img src="assets/IMG_9022.JPG" alt="" loading="lazy">
-        <img src="assets/IMG_9028.JPG" alt="" loading="lazy">
-      </div>
+      <p>現場のリアル・仲間のこと・新しい設備のこと。<br>京伸の“今”がいちばん伝わるのはInstagramです📸</p>
       <a class="follow" href="https://www.instagram.com/kyoshin.osaka/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
         Instagramでフォローする
       </a>
     </div>
+    <div class="igfeed rv d1">
+      <div class="igpost"><iframe src="https://www.instagram.com/reel/DZezxVUzEx0/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+      <div class="igpost"><iframe src="https://www.instagram.com/p/DZbJ79KE3zx/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+      <div class="igpost"><iframe src="https://www.instagram.com/p/DZZf9SLE71b/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+      <div class="igpost"><iframe src="https://www.instagram.com/p/DZXDTGATati/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+      <div class="igpost"><iframe src="https://www.instagram.com/p/DZWZ_1cE6dS/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+      <div class="igpost"><iframe src="https://www.instagram.com/p/DZMc43bk7up/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
+    </div>
+    <div class="swipe-hint rv">← SWIPE →</div>
   </section>
 
   <!-- ===== 現場の空気(スライド) ===== -->
