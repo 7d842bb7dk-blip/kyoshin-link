@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0e11">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon fill="%23e60b10" points="50,46 71.5,8.7 28.5,8.7"/><polygon fill="%23e60b10" points="46.5,48 25,10.7 3.5,48"/><polygon fill="%23e60b10" points="46.5,52 3.5,52 25,89.3"/><polygon fill="%23eaeaea" points="53.5,48 96.5,48 75,10.7"/><polygon fill="%23eaeaea" points="53.5,52 75,89.3 96.5,52"/><polygon fill="%23eaeaea" points="50,54 28.5,91.3 71.5,91.3"/></svg>'>
+<title>株式会社京伸|公式リンク</title>
+<meta name="description" content="大阪の精密板金加工・株式会社京伸の公式リンク。20代が主力の若いチームで、スピードと精度のモノづくり。即日見積・短納期・1ロットOK。">
+<meta property="og:title" content="株式会社京伸|若いチーム × スピードと精度の板金加工">
+<meta property="og:description" content="大阪の精密板金加工。20代多数活躍中。パイプレーザー・ファイバーレーザー溶接・製缶・組立。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root{
+    color-scheme: dark;
+    --bg:#0c0e11;
+    --bg2:#101318;
+    --card:rgba(255,255,255,.045);
+    --card-bd:rgba(255,255,255,.10);
+    --ink:#f2f4f7;
+    --dim:#9aa2ad;
+    --faint:#6b727c;
+    --red:#ff2630;
+    --red-deep:#e60b10;
+    --grad:linear-gradient(120deg,#ff2630,#ff5a3c);
+    --display:'Space Grotesk','Helvetica Neue',Arial,sans-serif;
+    --body:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',Meiryo,sans-serif;
+    --r-lg:24px;
+    --r-md:18px;
+    --r-sm:13px;
+    --shadow:0 16px 40px rgba(0,0,0,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:
+      radial-gradient(120% 80% at 50% -10%, #1a1f27 0%, var(--bg) 55%),
+      var(--bg);
+    line-height:1.75;
+    min-height:100dvh;
+    overflow-x:hidden;
+    padding-bottom:98px;
+    position:relative;
+  }
+  /* 全画面のダーク下地(ビューア対策) */
+  body::before{
+    content:"";position:fixed;inset:-10vh -10vw;z-index:-4;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #1a1f27 0%, #0c0e11 55%),
+      #0c0e11;
+  }
+  /* ヘアライン(ブラッシュドメタル)の極薄テクスチャ */
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;
+    background-image:repeating-linear-gradient(90deg,
+      rgba(255,255,255,.015) 0 1px, transparent 1px 3px);
+    opacity:.6;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:480px;margin:0 auto;padding:0 18px 40px;position:relative;z-index:1}
+
+  /* ===== アンビエント・レーザー背景 ===== */
+  #fx{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%}
+  .fxlines{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+  .fxlines::before{
+    content:"";position:absolute;top:-40%;left:-20%;width:140%;height:2px;
+    background:linear-gradient(90deg,transparent,rgba(255,38,48,0) 20%,rgba(255,38,48,.85) 50%,rgba(255,38,48,0) 80%,transparent);
+    box-shadow:0 0 22px rgba(255,38,48,.8);
+    transform:rotate(28deg);
+    animation:scanline 7s ease-in-out infinite;
+  }
+  .fxlines::after{
+    content:"";position:absolute;bottom:-30%;right:-20%;width:140%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0) 25%,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 75%,transparent);
+    transform:rotate(28deg);
+    animation:scanline2 11s ease-in-out infinite;
+  }
+  @keyframes scanline{
+    0%{transform:rotate(28deg) translateY(0);opacity:0}
+    12%{opacity:1}50%{transform:rotate(28deg) translateY(120vh);opacity:1}
+    62%{opacity:0}100%{transform:rotate(28deg) translateY(120vh);opacity:0}
+  }
+  @keyframes scanline2{
+    0%{transform:rotate(28deg) translateY(0);opacity:0}
+    20%{opacity:1}50%{transform:rotate(28deg) translateY(-120vh);opacity:.8}
+    70%{opacity:0}100%{opacity:0}
+  }
+
+  /* ===== 出現アニメ ===== */
+  .rv{opacity:0;transform:translateY(26px) scale(.98)}
+  .rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .rv.d1.on{transition-delay:.07s}.rv.d2.on{transition-delay:.14s}
+  .rv.d3.on{transition-delay:.21s}.rv.d4.on{transition-delay:.28s}.rv.d5.on{transition-delay:.35s}
+
+  /* ===== ヒーロー ===== */
+  .hero{padding-top:30px;text-align:center}
+  .logo{display:flex;align-items:center;justify-content:center;gap:11px}
+  .logo .hexmark{width:50px;height:50px;flex:0 0 auto;filter:drop-shadow(0 0 12px rgba(255,38,48,.45))}
+  .logo .hexmark polygon{transform-box:fill-box;transform-origin:center;opacity:0;animation:assemble .6s cubic-bezier(.2,.9,.2,1) forwards}
+  .logo .hexmark polygon:nth-child(1){animation-delay:.05s}
+  .logo .hexmark polygon:nth-child(2){animation-delay:.13s}
+  .logo .hexmark polygon:nth-child(3){animation-delay:.21s}
+  .logo .hexmark polygon:nth-child(4){animation-delay:.29s}
+  .logo .hexmark polygon:nth-child(5){animation-delay:.37s}
+  .logo .hexmark polygon:nth-child(6){animation-delay:.45s}
+  @keyframes assemble{from{opacity:0;transform:scale(.2) rotate(-40deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+  .logo .word{
+    font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;
+    font-weight:900;font-size:clamp(36px,11vw,48px);letter-spacing:-.015em;line-height:1.18;
+    padding-bottom:.12em;
+    display:inline-flex;align-items:center;
+    opacity:0;
+    -webkit-mask-image:linear-gradient(90deg,#000 0 40%,transparent 60%);
+    mask-image:linear-gradient(90deg,#000 0 40%,transparent 60%);
+    -webkit-mask-size:250% 100%;mask-size:250% 100%;
+    -webkit-mask-position:100% 0;mask-position:100% 0;
+    animation:wordwipe .7s ease-out .5s forwards;
+  }
+  @keyframes wordwipe{from{opacity:0;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+  .logo .word .red{color:#fff;text-shadow:0 0 18px rgba(255,38,48,.0)}
+  .logo .word .red{color:var(--red)}
+  .logo .word .blk{color:#fff}
+  .logo .word .hyp{width:.52em;height:.24em;margin:0 .04em;display:block}
+  .hero .corp{margin-top:12px;font-size:13px;font-weight:700;letter-spacing:.3em;text-indent:.3em;color:var(--ink)}
+  .hero .corp small{display:block;margin-top:3px;font-size:10.5px;font-weight:500;color:var(--dim);letter-spacing:.16em;text-indent:.16em}
+  .hero .copy{margin-top:18px;font-size:21px;font-weight:900;letter-spacing:.02em;line-height:1.5;color:#fff}
+  .hero .copy .hl{color:#fff;position:relative;white-space:nowrap}
+  .hero .copy .hl::after{
+    content:"";position:absolute;left:-2px;right:-2px;bottom:.04em;height:.42em;z-index:-1;
+    background:var(--grad);opacity:.9;border-radius:3px;
+    transform:skewX(-6deg);
+  }
+  .hero .copy .or{color:var(--red);text-shadow:0 0 24px rgba(255,38,48,.55)}
+
+  /* 動画カード */
+  .vcard{position:relative;margin-top:22px}
+  .vcard .frame{
+    border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;
+    box-shadow:var(--shadow);position:relative;
+    background:radial-gradient(closest-side at 50% 42%,#1c222b,#0c0e11 80%);
+    border:1px solid var(--card-bd);
+  }
+  .vcard .frame::before{
+    content:"KYO-SHIN / FACTORY MOVIE";
+    position:absolute;inset:0;display:grid;place-items:center;
+    font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.34em;
+    color:var(--faint);text-align:center;
+  }
+  .vcard video{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .vcard .ring{ /* 赤い枠のグロー */
+    position:absolute;inset:0;border-radius:var(--r-lg);pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,38,48,.35), 0 0 32px rgba(255,38,48,.18);
+  }
+  .stk{
+    position:absolute;z-index:2;font-weight:900;font-size:12.5px;letter-spacing:.04em;
+    padding:8px 14px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.45);
+    animation:floaty 4.2s ease-in-out infinite;
+  }
+  .stk.s1{top:-12px;left:-4px;background:var(--grad);color:#fff;transform:rotate(-6deg)}
+  .stk.s2{bottom:-12px;right:-2px;background:#fff;color:#0c0e11;transform:rotate(4deg);animation-delay:1.1s}
+  .stk.s3{top:-10px;right:10px;background:#16181d;color:#fff;border:1px solid var(--card-bd);transform:rotate(7deg);animation-delay:2.2s}
+  @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -6px}}
+
+  /* ===== 流れるビッグテキスト ===== */
+  .bigflow{margin:30px -18px 0;overflow:hidden;white-space:nowrap;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .bigflow .in{display:inline-block;font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:.02em;animation:flow 22s linear infinite;color:#fff}
+  .bigflow .out{color:transparent;-webkit-text-stroke:1.4px rgba(255,255,255,.22)}
+  .bigflow .or{color:var(--red)}
+  @keyframes flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ===== セクション ===== */
+  .sec{margin-top:44px;position:relative}
+  .sec.bg{margin-left:-18px;margin-right:-18px;padding:34px 18px;isolation:isolate}
+  .sec.bg::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--bgimg);background-size:cover;background-position:center;opacity:.22}
+  .sec.bg::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(12,14,17,.78),rgba(12,14,17,.9))}
+  .sec.bg .sec-head{margin-top:0}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .sec-head .en{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;color:#fff}
+  .sec-head .ja{font-size:11px;font-weight:700;color:#0c0e11;background:#fff;border-radius:999px;padding:3px 12px}
+  .sec-head::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--card-bd),transparent)}
+
+  /* ===== カルチャー:ベントー ===== */
+  .bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .bcard{background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);padding:20px 18px;position:relative;overflow:hidden;backdrop-filter:blur(8px)}
+  .bcard.full{grid-column:1/-1}
+  .bcard .emoji{font-size:30px;line-height:1}
+  .bcard h3{font-size:16px;font-weight:900;margin-top:10px;letter-spacing:.02em;color:#fff}
+  .bcard p{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.7}
+  .bcard .big{font-family:var(--display);font-weight:700;font-size:46px;line-height:1;color:#fff}
+  .bcard .big small{font-size:16px;font-family:var(--body);font-weight:900}
+  .bcard.grad{background:var(--grad);border-color:transparent}
+  .bcard.grad .big{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.25)}
+  .bcard.grad p{color:rgba(255,255,255,.9)}
+  .bcard.glow{border-color:rgba(255,38,48,.35);box-shadow:0 0 30px rgba(255,38,48,.12) inset}
+
+  /* ===== ボタン ===== */
+  .btn{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);padding:16px 18px;margin-bottom:12px;backdrop-filter:blur(8px);position:relative;overflow:hidden;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,box-shadow .2s}
+  .btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,38,48,.25),transparent);transform:skewX(-20deg);transition:left .5s ease}
+  .btn:hover::after{left:130%}
+  .btn:active{transform:scale(.97)}
+  .btn:hover{transform:translateY(-2px);border-color:rgba(255,38,48,.5);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  .btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .btn .ic{flex:0 0 44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(255,38,48,.14);color:var(--red)}
+  .btn .ic svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .btn .tx b{display:block;font-size:15px;font-weight:900;letter-spacing:.02em;color:#fff}
+  .btn .tx small{display:block;font-size:11.5px;color:var(--dim);margin-top:1px}
+  .btn .arrow{margin-left:auto;flex:0 0 30px;height:30px;border-radius:999px;display:grid;place-items:center;background:rgba(255,255,255,.08);font-family:var(--display);font-weight:700;font-size:14px;color:#fff;transition:background .2s,transform .2s}
+  .btn:hover .arrow{background:var(--red);transform:translateX(2px)}
+  .btn.cta{background:var(--grad);border-color:transparent}
+  .btn.cta::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+  .btn.cta .ic{background:rgba(255,255,255,.22);color:#fff}
+  .btn.cta .tx small{color:rgba(255,255,255,.9)}
+  .btn.cta .arrow{background:rgba(255,255,255,.25)}
+  .btn.solid{background:#fff;border-color:transparent}
+  .btn.solid::after{background:linear-gradient(90deg,transparent,rgba(255,38,48,.22),transparent)}
+  .btn.solid .ic{background:rgba(255,38,48,.12);color:var(--red-deep)}
+  .btn.solid .tx b{color:#0c0e11}
+  .btn.solid .tx small{color:#5b626c}
+  .btn.solid .arrow{background:#0c0e11;color:#fff}
+
+  /* ===== WORKSスライドショー ===== */
+  .show{position:relative;display:block;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#15181d;border:1px solid var(--card-bd)}
+  .show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.02);transition:opacity 1.3s ease}
+  .show img.act{opacity:1;animation:kenburns 7s ease-out forwards}
+  @keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.13)}}
+  .show .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(6,7,9,.85));pointer-events:none}
+  .show .cap{position:absolute;left:18px;right:18px;bottom:16px;color:#fff}
+  .show .cap .name{font-size:17px;font-weight:900;letter-spacing:.02em}
+  .show .cap .meta{font-size:11px;color:#c2c8d0;margin-top:2px}
+  .show .more{position:absolute;top:14px;right:14px;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.12em;color:#fff;background:rgba(255,38,48,.85);padding:6px 12px;border-radius:999px}
+  .show .dots{position:absolute;top:16px;left:16px;display:flex;gap:5px}
+  .show .dots i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.4);transition:width .3s,background .3s}
+  .show .dots i.act{width:18px;background:var(--red)}
+
+  /* ===== 事業:横スワイプ ===== */
+  .rail{display:flex;gap:12px;margin:0 -18px;padding:6px 18px 14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .rcard{position:relative;flex:0 0 196px;scroll-snap-align:start;aspect-ratio:3/4;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow);background:#15181d;border:1px solid var(--card-bd)}
+  .rcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .3s}
+  .rcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 36%,rgba(6,7,9,.88))}
+  .rcard .tx{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;color:#fff}
+  .rcard .tx b{display:block;font-size:15.5px;font-weight:900;letter-spacing:.02em}
+  .rcard .tx small{display:block;font-size:10.5px;color:#c2c8d0;margin-top:2px;line-height:1.5}
+  .rcard .num{position:absolute;top:10px;left:12px;z-index:1;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.06em;color:#fff;background:rgba(255,38,48,.85);padding:4px 10px;border-radius:999px}
+  .rcard:hover img{transform:scale(1.08);opacity:1}
+  .swipe-hint{text-align:center;font-size:10.5px;color:var(--faint);letter-spacing:.18em;margin-top:-2px}
+
+  /* ===== PICK UP ===== */
+  .pick{display:flex;align-items:stretch;background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);overflow:hidden;margin-bottom:12px;backdrop-filter:blur(8px);transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,box-shadow .2s}
+  .pick:hover{transform:translateY(-2px);border-color:rgba(255,38,48,.5);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  .pick:active{transform:scale(.98)}
+  .pick:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .pick .ph{flex:0 0 116px;overflow:hidden;background:#15181d}
+  .pick .ph img{width:100%;height:100%;object-fit:cover;min-height:90px;opacity:.9;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .pick:hover .ph img{transform:scale(1.1)}
+  .pick .tx{flex:1;padding:13px 15px;display:flex;flex-direction:column;justify-content:center}
+  .pick .tag{align-self:flex-start;font-size:9.5px;font-weight:900;letter-spacing:.08em;color:#fff;background:var(--red);border-radius:999px;padding:2px 9px;margin-bottom:5px}
+  .pick b{font-size:13.5px;font-weight:900;line-height:1.5;letter-spacing:.01em;color:#fff}
+  .pick small{font-size:11px;color:var(--dim);margin-top:3px;line-height:1.55}
+
+  /* ===== SPEC ===== */
+  .spec{background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);padding:20px;backdrop-filter:blur(8px);font-size:12.5px}
+  .spec dt{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--red);margin-top:14px}
+  .spec dt:first-child{margin-top:0}
+  .spec dd{margin-top:3px;color:var(--dim);line-height:1.8}
+
+  /* ===== SNS ===== */
+  .sns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+  .sns a{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;background:var(--card);border:1px solid var(--card-bd);backdrop-filter:blur(8px);transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s,border-color .2s}
+  .sns a:hover{transform:translateY(-4px) rotate(-4deg);background:var(--red);border-color:transparent}
+  .sns a:hover svg{stroke:#fff}
+  .sns a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .sns svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+
+  footer{margin-top:46px;text-align:center;font-size:11px;color:var(--faint);letter-spacing:.06em}
+  footer .en{font-family:var(--display);font-weight:600;letter-spacing:.18em;margin-bottom:4px;color:var(--dim)}
+
+  /* ===== 下部固定CTA ===== */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(12,14,17,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--card-bd)}
+  .dock .in{max-width:480px;margin:0 auto;display:flex;gap:10px}
+  .dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:900;letter-spacing:.04em;padding:14px 10px;border-radius:999px;transition:transform .15s}
+  .dock a:active{transform:scale(.96)}
+  .dock .call{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(255,38,48,.4)}
+  .dock .form{background:#fff;color:#0c0e11}
+  .dock svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+  @media (prefers-reduced-motion:reduce){
+    #fx{display:none}
+    .fxlines::before,.fxlines::after{animation:none;opacity:0}
+    .logo .hexmark polygon{animation:none;opacity:1}
+    .logo .word{animation:none;opacity:1;-webkit-mask-image:none;mask-image:none}
+    .bigflow .in{animation:none}
+    .stk{animation:none}
+    .show img.act{animation:none;transform:none}
+    .rv{opacity:1;transform:none}
+    .btn,.pick,.sns a,.rcard img,.pick .ph img{transition:none}
+  }
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="fxlines" aria-hidden="true"></div>
+<div class="wrap">
+
+  <!-- ===== ヒーロー ===== -->
+  <header class="hero">
+    <h1 class="logo">
+      <svg class="hexmark" viewBox="0 0 100 100" role="img" aria-label="京伸ロゴマーク">
+        <polygon fill="#ff2630" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
+        <polygon fill="#ff2630" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
+        <polygon fill="#ff2630" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
+        <polygon fill="#ffffff" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
+        <polygon fill="#ffffff" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
+        <polygon fill="#ffffff" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+      </svg>
+      <span class="word"><span class="red">Kyo</span><svg class="hyp" viewBox="0 0 30 12" aria-hidden="true"><polygon fill="#ff2630" points="2,11 8,1 28,1"/><polygon fill="#ffffff" points="2,11 28,1 22,11"/></svg><span class="blk">shin</span></span>
+    </h1>
+    <div class="corp">株式会社 京伸<small>KYO-SHIN CO., LTD.|大阪・精密板金</small></div>
+    <p class="copy">
+      <span class="hl">若いチーム</span>でつくる、<br>
+      「<span class="or">スピードと精度</span>」のモノづくり。
+    </p>
+
+    <div class="vcard">
+      <span class="stk s1">20代、多数活躍中🔥</span>
+      <span class="stk s3">仲の良さ自慢です</span>
+      <div class="frame">
+        <video autoplay muted loop playsinline preload="metadata"
+               src="https://www.f-kyo-shin.co.jp/images/top/movie.mp4"></video>
+        <span class="ring" aria-hidden="true"></span>
+      </div>
+      <span class="stk s2">即日見積OK⚡</span>
+    </div>
+  </header>
+
+  <!-- ===== 流れるビッグテキスト ===== -->
+  <div class="bigflow" aria-hidden="true">
+    <span class="in" id="bigflow">SPEED <span class="or">×</span> PRECISION <span class="or">×</span> <span class="out">YOUNG TEAM</span> — KYO-SHIN OSAKA — </span>
+  </div>
+
+  <!-- ===== カルチャー ===== -->
+  <section class="sec">
+    <div class="sec-head rv"><span class="en">Culture</span><span class="ja">京伸ってこんな会社</span></div>
+    <div class="bento">
+      <div class="bcard grad rv">
+        <div class="big">20<small>代</small></div>
+        <h3>が主力の現場</h3>
+        <p>若手がどんどん最新レーザー設備を任される環境です</p>
+      </div>
+      <div class="bcard glow rv d1">
+        <div class="emoji">🚀</div>
+        <h3>役職者も若い</h3>
+        <p>年齢じゃなく実力で評価。若くしてリーダーになれる会社です</p>
+      </div>
+      <div class="bcard full rv d2">
+        <div class="emoji">🤝</div>
+        <h3>とにかく仲が良い</h3>
+        <p>部署も年齢も関係なくフラットな雰囲気。困ったら誰かがすぐ助けてくれる、チームワークが自慢の職場です。雰囲気はInstagramとTikTokでぜひチェックしてみてください👀</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== リンク ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2021/05/IMG_1685.jpg')">
+    <div class="sec-head rv"><span class="en">Links</span><span class="ja">まずはここから</span></div>
+
+    <a class="btn cta rv" href="https://www.f-kyo-shin.co.jp/contact.html" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span>
+      <span class="tx"><b>図面送信・お見積もり</b><small>即日対応|他社で断られた案件も歓迎</small></span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="btn rv d1" href="https://www.f-kyo-shin.co.jp/" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <span class="tx"><b>公式ホームページ</b><small>京伸のすべてはこちらから</small></span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="btn solid rv d2" href="https://www.f-kyo-shin.co.jp/recruit.html" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span class="tx"><b>採用情報|一緒に働こう✌️</b><small>若手が活躍できるモノづくりの現場です</small></span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="btn rv d3" href="https://www.f-kyo-shin.co.jp/movie" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="10 8 16 12 10 16 10 8"/><rect x="2" y="4" width="20" height="16" rx="3"/></svg></span>
+      <span class="tx"><b>動画で見るKYOSHIN</b><small>設備・技術・工場の様子をムービーで</small></span>
+      <span class="arrow">→</span>
+    </a>
+  </section>
+
+  <!-- ===== WORKS ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-1.jpg')">
+    <div class="sec-head rv"><span class="en">Works</span><span class="ja">こんなのつくってます</span></div>
+    <a class="show rv" id="slideshow" href="https://www.f-kyo-shin.co.jp/product/" target="_blank" rel="noopener" aria-label="製作品・実例紹介一覧へ">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_021.jpg" alt="" data-name="サッカーボール" data-meta="ステンレス|1枚曲げ・溶接|HL仕上げ" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_020.jpg" alt="" data-name="溶接トーチオブジェ" data-meta="ステンレス|サンダー仕上げ・溶接|バフ仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_018.jpg" alt="" data-name="トレー" data-meta="ステンレス・特殊鋼|溶接|鏡面仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_013.jpg" alt="" data-name="エビ管ダクト" data-meta="ステンレス|丸パイプレーザー・YAG溶接|バフ仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_016.jpg" alt="" data-name="TOY(トイ)" data-meta="ステンレス|角パイプレーザー|組立" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/10/pdt_1002_02.jpg" alt="" data-name="オブジェ" data-meta="ステンレス|切断・曲げ・溶接|塗装" loading="lazy" referrerpolicy="no-referrer">
+      <div class="shade" aria-hidden="true"></div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <span class="more">VIEW ALL →</span>
+      <div class="cap"><div class="name" id="capName"></div><div class="meta" id="capMeta"></div></div>
+    </a>
+  </section>
+
+  <!-- ===== 事業内容:横スワイプ ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_002_1.jpg')">
+    <div class="sec-head rv"><span class="en">Business</span><span class="ja">できること</span></div>
+    <div class="rail rv">
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/sheetmetal.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_019.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">01</span><span class="tx"><b>精密板金</b><small>多品種少量・試作もOK</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/plateworking.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_020.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">02</span><span class="tx"><b>溶接・製缶</b><small>小型〜大型フレーム架台</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/cutting_machining.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/10/pdt_1001_04.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">03</span><span class="tx"><b>切削・マシニング</b><small>五面加工機まで一貫対応</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/plan.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_016.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">04</span><span class="tx"><b>CAD</b><small>3次元CADで全図面展開</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/polish.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_018.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">05</span><span class="tx"><b>バフ仕上げ</b><small>鏡面・ヘアラインも自社対応</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/production_control.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_011.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">06</span><span class="tx"><b>生産管理</b><small>設計から出荷までワンストップ</small></span>
+      </a>
+    </div>
+    <div class="swipe-hint">← SWIPE →</div>
+  </section>
+
+  <!-- ===== PICK UP ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-2.jpg')">
+    <div class="sec-head rv"><span class="en">Pick up</span><span class="ja">最新トピック</span></div>
+
+    <a class="pick rv" href="https://www.f-kyo-shin.co.jp/pickup/438.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">NEW</span><b>複合旋盤「MULTUS U4000」導入</b><small>高品質・短納期対応をさらに強化</small></span>
+    </a>
+    <a class="pick rv d1" href="https://www.f-kyo-shin.co.jp/pickup/435.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">NEW</span><b>ファイバーレーザー加工機「ENSIS RI3015」</b><small>加工精度と生産性がさらに向上</small></span>
+    </a>
+    <a class="pick rv d2" href="https://www.f-kyo-shin.co.jp/pickup/115.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_002_1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">設備</span><b>パイプレーザー加工機</b><small>複雑形状もフレキシブルに。高品質・短納期</small></span>
+    </a>
+    <a class="pick rv d3" href="https://www.f-kyo-shin.co.jp/pickup/116.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_001_1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">設備</span><b>ファイバー・YAGレーザー溶接機</b><small>異種金属溶接、0.3mm〜の薄板溶接が可能</small></span>
+    </a>
+    <a class="pick rv d4" href="https://k-max2023.com/" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2023/10/banner_fpa_mb.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">自社製品</span><b>K-MAX|フレキシブルパワーアーム</b><small>1台でほぼ全部位を鍛えられる国産トレーニングマシン。板金技術を活かして自社製造中</small></span>
+    </a>
+  </section>
+
+  <!-- ===== SPEC ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_001_1.jpg')">
+    <div class="sec-head rv"><span class="en">Spec</span><span class="ja">対応素材・データ</span></div>
+    <dl class="spec rv">
+      <dt>MATERIAL</dt>
+      <dd>ステンレス / アルミ / 鉄 / 鋼板 ほか各種金属</dd>
+      <dt>PROCESS</dt>
+      <dd>パイプレーザー・レーザー加工・ベンダー加工・プレス・各種溶接・グラインダ・研磨処理・試作</dd>
+      <dt>CAD DATA</dt>
+      <dd>2D:DXF / DWG / DRG / jww 3D:SAT / STEP / IGES / x_t ほか</dd>
+      <dt>ADDRESS</dt>
+      <dd>〒574-0064 大阪府大東市御領3丁目12番57号<br>TEL 072-889-5788(平日9:00〜18:00)/ FAX 072-887-6598</dd>
+    </dl>
+  </section>
+
+  <!-- ===== SNS ===== -->
+  <section class="sec">
+    <div class="sec-head rv"><span class="en">Follow us</span><span class="ja">日常はこちらで発信中</span></div>
+    <div class="sns rv">
+      <a href="https://www.instagram.com/kyoshin.osaka/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.tiktok.com/@000_kyoshin_000" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12.5a4 4 0 1 0 4 4V3.5c.6 2.4 2.4 4.3 5 4.7"/></svg></a>
+      <a href="https://www.youtube.com/channel/UCi-y8Gk2n1II0utHaeAyKKw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
+      <a href="https://www.facebook.com/kyoshin.co/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 3h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://twitter.com/K_MAX_fp_arm" target="_blank" rel="noopener" aria-label="X(旧Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+    </div>
+  </section>
+
+  <footer>
+    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true" style="margin:0 auto 8px;display:block">
+      <polygon fill="#ff2630" points="50.0,46.0 71.5,8.7 28.5,8.7"/>
+      <polygon fill="#ff2630" points="46.5,48.0 25.0,10.7 3.5,48.0"/>
+      <polygon fill="#ff2630" points="46.5,52.0 3.5,52.0 25.0,89.3"/>
+      <polygon fill="#e7e9ec" points="53.5,48.0 96.5,48.0 75.0,10.7"/>
+      <polygon fill="#e7e9ec" points="53.5,52.0 75.0,89.3 96.5,52.0"/>
+      <polygon fill="#e7e9ec" points="50.0,54.0 28.5,91.3 71.5,91.3"/>
+    </svg>
+    <div class="en">KYO-SHIN — PRECISION SHEET METAL, OSAKA</div>
+    <div>© 株式会社京伸</div>
+  </footer>
+</div>
+
+<nav class="dock" aria-label="お問い合わせ">
+  <div class="in">
+    <a class="call" href="tel:0728895788">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      電話する
+    </a>
+    <a class="form" href="https://www.f-kyo-shin.co.jp/contact.html" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      見積もり依頼
+    </a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* レーザーの火花が漂う背景 */
+  var cv = document.getElementById('fx');
+  if(cv && !reduce){
+    var ctx = cv.getContext('2d');
+    var DPR = Math.min(window.devicePixelRatio||1, 2);
+    var W,H,parts;
+    function resize(){ W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
+    function seed(){
+      var n=Math.round((innerWidth*innerHeight)/24000); n=Math.max(20,Math.min(52,n));
+      parts=[];
+      for(var i=0;i<n;i++){
+        parts.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.7+0.5)*DPR,
+          vy:-(Math.random()*0.3+0.06)*DPR,vx:(Math.random()-0.5)*0.2*DPR,
+          red:Math.random()<0.62,a:Math.random()*0.6+0.25,tw:Math.random()*Math.PI*2});
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<parts.length;i++){
+        var p=parts[i]; p.y+=p.vy; p.x+=p.vx; p.tw+=0.025;
+        if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
+        var tw=0.55+0.45*Math.sin(p.tw);
+        var col=p.red?'255,48,56':'200,206,214';
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba('+col+','+(p.a*tw)+')';
+        ctx.shadowBlur=p.red?10*DPR:2*DPR;
+        ctx.shadowColor=p.red?'rgba(255,48,56,.8)':'rgba(255,255,255,.4)';
+        ctx.fill(); ctx.shadowBlur=0;
+      }
+      requestAnimationFrame(draw);
+    }
+    resize(); seed(); draw();
+    var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){resize();seed();},200);});
+  }
+
+  /* 流れるビッグテキスト */
+  var bf=document.getElementById('bigflow'); if(bf){bf.innerHTML+=bf.innerHTML;}
+
+  /* スクロール出現 */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  /* WORKSスライドショー */
+  var show=document.getElementById('slideshow'); if(!show)return;
+  var imgs=show.querySelectorAll('img'), capName=document.getElementById('capName'), capMeta=document.getElementById('capMeta'), dots=document.getElementById('dots');
+  imgs.forEach(function(){dots.appendChild(document.createElement('i'));});
+  var dotEls=dots.querySelectorAll('i'), i=0;
+  function setSlide(n){
+    imgs.forEach(function(img,idx){img.classList.toggle('act',idx===n);});
+    dotEls.forEach(function(d,idx){d.classList.toggle('act',idx===n);});
+    capName.textContent=imgs[n].dataset.name||''; capMeta.textContent=imgs[n].dataset.meta||'';
+  }
+  setSlide(0);
+  if(!reduce){setInterval(function(){i=(i+1)%imgs.length;setSlide(i);},4400);}
+})();
+</script>
+</body>
+</html>

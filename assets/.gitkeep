@@ -1,0 +1,2 @@
+画像・動画をローカルに取り込む場合はこのフォルダに置き、
+index.html 内の https://f-kyo-shin.co.jp/... を相対パス(assets/xxx.jpg)に置き換える。
