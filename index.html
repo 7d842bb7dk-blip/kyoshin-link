@@ -68,9 +68,9 @@
   .wrap{max-width:480px;margin:0 auto;padding:0 18px 40px;position:relative;z-index:1}
 
   /* ===== アンビエント・レーザー背景 ===== */
-  #fx{position:fixed;inset:0;z-index:-2;pointer-events:none;display:block}
+  #fx{position:fixed;inset:0;z-index:0;pointer-events:none;display:block}
 
-  .fxlines{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+  .fxlines{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
   .fxlines::before{
     content:"";position:absolute;top:-40%;left:-20%;width:140%;height:2px;
     background:linear-gradient(90deg,transparent,rgba(255,38,48,0) 20%,rgba(255,38,48,.85) 50%,rgba(255,38,48,0) 80%,transparent);
@@ -577,9 +577,9 @@
 
     function frame(t){
       if(!last)last=t; var dt=Math.min(40,t-last); last=t;
-      // 残像を残して尾を引かせる
-      ctx.globalCompositeOperation='source-over';
-      ctx.fillStyle='rgba(12,14,17,0.30)';
+      // 残像を少しずつ消す(透明方向へフェード=背景が透ける)
+      ctx.globalCompositeOperation='destination-out';
+      ctx.fillStyle='rgba(0,0,0,0.16)';
       ctx.fillRect(0,0,W,H);
       ctx.globalCompositeOperation='lighter';
 
