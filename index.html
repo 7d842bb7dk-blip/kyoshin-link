@@ -7,9 +7,9 @@
 <meta name="theme-color" content="#0c0e11">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon fill="%23e60b10" points="50,46 71.5,8.7 28.5,8.7"/><polygon fill="%23e60b10" points="46.5,48 25,10.7 3.5,48"/><polygon fill="%23e60b10" points="46.5,52 3.5,52 25,89.3"/><polygon fill="%23eaeaea" points="53.5,48 96.5,48 75,10.7"/><polygon fill="%23eaeaea" points="53.5,52 75,89.3 96.5,52"/><polygon fill="%23eaeaea" points="50,54 28.5,91.3 71.5,91.3"/></svg>'>
 <title>株式会社京伸|公式リンク</title>
-<meta name="description" content="大阪・大東市の精密板金 株式会社京伸の公式リンク。若い人が多い活気ある現場で、仲間とモノづくり。求人募集中／Instagramで毎日の雰囲気を発信中。">
-<meta property="og:title" content="株式会社京伸|若い仲間とつくる、大阪の精密板金">
-<meta property="og:description" content="大阪・大東市の精密板金。若手が活躍する活気ある現場。求人募集中／Instagram発信中。">
+<meta name="description" content="大阪の精密板金加工・株式会社京伸の公式リンク。20代が主力の若いチームで、スピードと精度のモノづくり。短納期・1ロットOK。">
+<meta property="og:title" content="株式会社京伸|若いチーム × スピードと精度の板金加工">
+<meta property="og:description" content="大阪の精密板金加工。20代多数活躍中。パイプレーザー・ファイバーレーザー溶接・製缶・組立。">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,9 +40,9 @@
   body{
     font-family:var(--body);
     color:var(--ink);
-    /* 背景は透明に。暗い下地は body::before(z-index:-4) が描く。
-       ここを不透明にすると z-index:-2 の火花canvasが隠れてしまう(重要) */
-    background:transparent;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #1a1f27 0%, var(--bg) 55%),
+      var(--bg);
     line-height:1.75;
     min-height:100dvh;
     overflow-x:hidden;
@@ -233,6 +233,13 @@
   .btn.solid .tx b{color:#0c0e11}
   .btn.solid .tx small{color:#5b626c}
   .btn.solid .arrow{background:#0c0e11;color:#fff}
+  .btn.line{background:#06c755;border-color:transparent}
+  .btn.line::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+  .btn.line .ic{background:rgba(255,255,255,.25);color:#fff}
+  .btn.line .ic svg{fill:currentColor;stroke:none}
+  .btn.line .tx b{color:#fff}
+  .btn.line .tx small{color:rgba(255,255,255,.9)}
+  .btn.line .arrow{background:rgba(255,255,255,.25);color:#fff}
 
   /* ===== WORKSスライドショー ===== */
   .show{position:relative;display:block;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#15181d;border:1px solid var(--card-bd)}
@@ -291,50 +298,6 @@
   footer{margin-top:46px;text-align:center;font-size:11px;color:var(--faint);letter-spacing:.06em}
   footer .en{font-family:var(--display);font-weight:600;letter-spacing:.18em;margin-bottom:4px;color:var(--dim)}
 
-  /* ===== リード文/汎用フォト ===== */
-  .lead{font-size:14px;color:var(--dim);line-height:1.85}
-  .lead b{color:#fff;font-weight:900}
-  .ph-card{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--card-bd);box-shadow:var(--shadow);background:#15181d}
-  .ph-card img{display:block;width:100%;height:100%;object-fit:cover}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .grid2 .ph-card{aspect-ratio:1/1}
-  .grid2 .wide{grid-column:1/-1;aspect-ratio:16/10}
-  .cap-chip{position:absolute;left:10px;bottom:10px;z-index:1;font-size:11px;font-weight:900;color:#fff;background:rgba(12,14,17,.55);backdrop-filter:blur(6px);padding:5px 11px;border-radius:999px;border:1px solid var(--card-bd)}
-  .vcard .frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
-
-  /* ===== Instagram(大きく) ===== */
-  .ig{position:relative;border-radius:var(--r-lg);overflow:hidden;padding:22px 18px;
-    background:linear-gradient(135deg,#feda75,#fa7e1e 22%,#d62976 52%,#962fbf 76%,#4f5bd5);
-    box-shadow:0 18px 44px rgba(214,41,118,.38)}
-  .ig .hdr{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .ig .iglogo{width:48px;height:48px;flex:0 0 auto;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center}
-  .ig .iglogo svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .ig .at{font-family:var(--display);font-weight:700;font-size:19px;color:#fff;line-height:1.15}
-  .ig .at small{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.02em;margin-top:2px}
-  .ig p{color:#fff;font-size:13px;line-height:1.7;margin-bottom:14px;font-weight:700}
-  .ig .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:16px}
-  .ig .strip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,.55)}
-  .ig .follow{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#c32aa3;font-weight:900;font-size:15.5px;padding:15px;border-radius:999px;letter-spacing:.03em}
-  .ig .follow svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2}
-
-  /* Instagram 実フィード(横スワイプ) */
-  .igfeed{display:flex;gap:12px;margin:14px -18px 6px;padding:2px 18px 4px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .igfeed::-webkit-scrollbar{display:none}
-  .igpost{flex:0 0 300px;width:300px;height:560px;scroll-snap-align:start;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--card-bd);box-shadow:var(--shadow);background:#fff}
-  .igpost iframe{width:100%;height:100%;border:0;display:block}
-
-  /* ===== 採用 ===== */
-  .recruit{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(255,38,48,.45);box-shadow:0 0 40px rgba(255,38,48,.15) inset,var(--shadow)}
-  .recruit .ph{position:relative;aspect-ratio:16/11}
-  .recruit .ph img{width:100%;height:100%;object-fit:cover;display:block}
-  .recruit .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,17,.05),rgba(12,14,17,.55) 60%,rgba(12,14,17,.95))}
-  .recruit .ttl{position:absolute;left:18px;right:18px;bottom:14px;z-index:1;color:#fff;font-size:21px;font-weight:900;line-height:1.3;text-shadow:0 2px 14px rgba(0,0,0,.55)}
-  .recruit .ttl .or{color:#ff5a3c}
-  .recruit .body{padding:18px 18px 20px;background:rgba(20,23,28,.92);backdrop-filter:blur(8px)}
-  .recruit .body p{font-size:13px;color:var(--dim);line-height:1.8}
-  .recruit .pts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 16px}
-  .recruit .pts span{font-size:11.5px;font-weight:800;color:#fff;background:rgba(255,38,48,.15);border:1px solid rgba(255,38,48,.42);padding:7px 13px;border-radius:999px}
-
   /* ===== 下部固定CTA ===== */
   .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(12,14,17,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--card-bd)}
   .dock .in{max-width:480px;margin:0 auto;display:flex;gap:10px}
@@ -342,6 +305,7 @@
   .dock a:active{transform:scale(.96)}
   .dock .call{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(255,38,48,.4)}
   .dock .form{background:#fff;color:#0c0e11}
+  .dock .line{background:#06c755;color:#fff;box-shadow:0 8px 24px rgba(6,199,85,.4)}
   .dock svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
   /* 低減設定は無視:アニメーションは常に有効 */
@@ -372,26 +336,25 @@
     </h1>
     <div class="corp">株式会社 京伸<small>KYO-SHIN CO., LTD.|大阪・精密板金</small></div>
     <p class="copy">
-      <span class="hl">若い人</span>が多い、<br>
-      「<span class="or">仲間とつくる</span>」モノづくり。
+      <span class="hl">若いチーム</span>でつくる、<br>
+      「<span class="or">スピードと精度</span>」のモノづくり。
     </p>
 
     <div class="vcard">
-      <span class="stk s1">若い人、多いです🔥</span>
+      <span class="stk s1">20代、多数活躍中🔥</span>
       <span class="stk s3">仲の良さ自慢です</span>
       <div class="frame">
         <video autoplay muted loop playsinline preload="metadata"
-               poster="assets/IMG_9021.JPG"
                src="https://www.f-kyo-shin.co.jp/images/top/movie.mp4"></video>
         <span class="ring" aria-hidden="true"></span>
       </div>
-      <span class="stk s2">未経験も歓迎✌️</span>
+      <span class="stk s2">1ロットからOK⚡</span>
     </div>
   </header>
 
   <!-- ===== 流れるビッグテキスト ===== -->
   <div class="bigflow" aria-hidden="true">
-    <span class="in" id="bigflow">JOIN US <span class="or">×</span> YOUNG TEAM <span class="or">×</span> <span class="out">MONOZUKURI</span> — KYO-SHIN OSAKA — </span>
+    <span class="in" id="bigflow">SPEED <span class="or">×</span> PRECISION <span class="or">×</span> <span class="out">YOUNG TEAM</span> — KYO-SHIN OSAKA — </span>
   </div>
 
   <!-- ===== カルチャー ===== -->
@@ -399,124 +362,133 @@
     <div class="sec-head rv"><span class="en">Culture</span><span class="ja">京伸ってこんな会社</span></div>
     <div class="bento">
       <div class="bcard grad rv">
-        <div class="emoji">🔥</div>
-        <h3>若い人が多い</h3>
-        <p>20〜30代を中心に、若手がいきいき働く活気ある現場です</p>
+        <div class="big">20<small>代</small></div>
+        <h3>が主力の現場</h3>
+        <p>若手がどんどん最新レーザー設備を任される環境です</p>
       </div>
       <div class="bcard glow rv d1">
         <div class="emoji">🚀</div>
-        <h3>年齢より実力</h3>
-        <p>若くても、やる気と実力があればどんどん任される会社です</p>
+        <h3>役職者も若い</h3>
+        <p>年齢じゃなく実力で評価。若くしてリーダーになれる会社です</p>
       </div>
       <div class="bcard full rv d2">
         <div class="emoji">🤝</div>
         <h3>とにかく仲が良い</h3>
-        <p>部署も年齢も関係なくフラットな雰囲気。困ったら誰かがすぐ助けてくれる、チームワークが自慢の職場です。普段の空気感は、ぜひInstagramでチェックしてみてください👀</p>
-      </div>
-    </div>
-    <div class="ph-card rv d2" style="aspect-ratio:16/10;margin-top:12px">
-      <img src="assets/IMG_9029.JPG" alt="京伸の朝礼に集まるスタッフ" loading="lazy">
-      <span class="cap-chip">朝礼にあつまる仲間たち</span>
-    </div>
-  </section>
-
-  <!-- ===== Instagram(大きく) ===== -->
-  <section class="sec">
-    <div class="sec-head rv"><span class="en">Instagram</span><span class="ja">いちばん見てほしい</span></div>
-    <div class="ig rv">
-      <div class="hdr">
-        <span class="iglogo" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="#fff" stroke="none"/></svg></span>
-        <span class="at">@kyoshin.osaka<small>京伸の“素”の毎日を発信中</small></span>
-      </div>
-      <p>現場のリアル・仲間のこと・新しい設備のこと。<br>京伸の“今”がいちばん伝わるのはInstagramです📸</p>
-      <a class="follow" href="https://www.instagram.com/kyoshin.osaka/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-        Instagramでフォローする
-      </a>
-    </div>
-    <div class="igfeed rv d1">
-      <div class="igpost"><iframe src="https://www.instagram.com/reel/DZezxVUzEx0/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-      <div class="igpost"><iframe src="https://www.instagram.com/p/DZbJ79KE3zx/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-      <div class="igpost"><iframe src="https://www.instagram.com/p/DZZf9SLE71b/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-      <div class="igpost"><iframe src="https://www.instagram.com/p/DZXDTGATati/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-      <div class="igpost"><iframe src="https://www.instagram.com/p/DZWZ_1cE6dS/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-      <div class="igpost"><iframe src="https://www.instagram.com/p/DZMc43bk7up/embed" loading="lazy" title="京伸のInstagram投稿" scrolling="no"></iframe></div>
-    </div>
-    <div class="swipe-hint rv">← SWIPE →</div>
-  </section>
-
-  <!-- ===== 現場の空気(スライド) ===== -->
-  <section class="sec bg" style="--bgimg:url('assets/IMG_9023.JPG')">
-    <div class="sec-head rv"><span class="en">Our Vibe</span><span class="ja">現場の空気</span></div>
-    <a class="show rv" id="slideshow" href="https://www.instagram.com/kyoshin.osaka/" target="_blank" rel="noopener" aria-label="京伸のInstagramへ">
-      <img src="assets/IMG_9027.JPG" alt="" data-name="若手も活躍中" data-meta="未経験から育つ環境">
-      <img src="assets/IMG_9021.JPG" alt="" data-name="先輩はこんな感じ" data-meta="話しやすい・面倒見がいい" loading="lazy">
-      <img src="assets/IMG_9028.JPG" alt="" data-name="個性は大事に" data-meta="自分らしく働ける" loading="lazy">
-      <img src="assets/IMG_9022.JPG" alt="" data-name="休憩中のひとコマ" data-meta="とにかく仲がいい" loading="lazy">
-      <img src="assets/IMG_9025.JPG" alt="" data-name="職人の技も学べる" data-meta="ベテランの背中を見て育つ" loading="lazy">
-      <img src="assets/IMG_9030.JPG" alt="" data-name="毎朝みんなで朝礼" data-meta="ここから一日がはじまる" loading="lazy">
-      <img src="assets/IMG_9040.JPG" alt="" data-name="一人ひとりが主役" data-meta="真剣に、ていねいに" loading="lazy">
-      <img src="assets/IMG_9042.JPG" alt="" data-name="ノリも大事" data-meta="楽しく働ける職場です" loading="lazy">
-      <img src="assets/IMG_9033.JPG" alt="" data-name="さあ、行こう" data-meta="あなたの活躍を待っています" loading="lazy">
-      <div class="shade" aria-hidden="true"></div>
-      <div class="dots" id="dots" aria-hidden="true"></div>
-      <span class="more">Instagram →</span>
-      <div class="cap"><div class="name" id="capName"></div><div class="meta" id="capMeta"></div></div>
-    </a>
-  </section>
-
-  <!-- ===== 採用 ===== -->
-  <section class="sec">
-    <div class="sec-head rv"><span class="en">Recruit</span><span class="ja">仲間募集中</span></div>
-    <div class="recruit rv">
-      <div class="ph">
-        <img src="assets/IMG_9032.JPG" alt="求人募集中の京伸スタッフ" loading="lazy">
-        <div class="ttl">一緒に、<span class="or">モノづくり</span>。<br>しませんか？</div>
-      </div>
-      <div class="body">
-        <p>若い力が、どんどん活躍できる会社です。最新のレーザー設備に囲まれて、気のいい仲間と一緒に、モノづくりのプロを目指しませんか？</p>
-        <div class="pts"><span>若手が活躍</span><span>年齢より実力</span><span>最新レーザー設備</span><span>フラットな社風</span><span>仲が良い</span></div>
-        <a class="btn cta" href="https://www.f-kyo-shin.co.jp/recruit.html" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <span class="tx"><b>採用情報を見る</b><small>募集職種・働き方はこちら</small></span>
-          <span class="arrow">→</span>
-        </a>
+        <p>部署も年齢も関係なくフラットな雰囲気。困ったら誰かがすぐ助けてくれる、チームワークが自慢の職場です。雰囲気はInstagramとTikTokでぜひチェックしてみてください👀</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== モノづくり ===== -->
-  <section class="sec">
-    <div class="sec-head rv"><span class="en">Our Work</span><span class="ja">こんな仕事です</span></div>
-    <p class="lead rv"><b>図面を引く</b>ところから、切る・削る・曲げる・溶接、仕上げまで<b>一貫</b>。火花の中で生まれる、ミリ単位の<b>モノづくり</b>。手がけた部品は、いろんな製品の“中身”として全国へ届きます。</p>
-    <div class="grid2 rv d1" style="margin-top:14px">
-      <div class="ph-card wide"><img src="assets/IMG_9041.JPG" alt="CADで図面を確認するスタッフ" loading="lazy"><span class="cap-chip">図面・設計から</span></div>
-      <div class="ph-card"><img src="assets/IMG_9023.JPG" alt="レーザー加工機と火花" loading="lazy"><span class="cap-chip">切る（レーザー）</span></div>
-      <div class="ph-card"><img src="assets/IMG_9037.JPG" alt="旋盤での切削加工" loading="lazy"><span class="cap-chip">削る（切削）</span></div>
-      <div class="ph-card"><img src="assets/IMG_9024.JPG" alt="溶接の火花" loading="lazy"><span class="cap-chip">溶接でつなぐ</span></div>
-      <div class="ph-card"><img src="assets/IMG_9031.JPG" alt="鏡面仕上げの金属部品" loading="lazy"><span class="cap-chip">磨いて仕上げ</span></div>
-    </div>
-    <a class="btn rv d2" href="https://www.f-kyo-shin.co.jp/" target="_blank" rel="noopener" style="margin-top:14px">
+  <!-- ===== リンク ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2021/05/IMG_1685.jpg')">
+    <div class="sec-head rv"><span class="en">Links</span><span class="ja">まずはここから</span></div>
+
+    <a class="btn rv d1" href="https://www.f-kyo-shin.co.jp/" target="_blank" rel="noopener">
       <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-      <span class="tx"><b>会社のことをもっと知る</b><small>公式ホームページ</small></span>
+      <span class="tx"><b>公式ホームページ</b><small>京伸のすべてはこちらから</small></span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="btn line rv d2" href="https://lin.ee/5tJsTLC" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 6.9 7.7 7.5.3.06.7.2.8.46.07.24.05.6.02.85l-.13.78c-.04.23-.18.9.8.49s4.3-2.5 5.86-4.3c1.08-1.18 1.6-2.4 1.6-3.78C21.2 6.4 17.1 3 12 3z"/></svg></span>
+      <span class="tx"><b>公式LINE|友だち追加</b><small>お問い合わせ・ご相談はLINEでお気軽に</small></span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="btn rv d3" href="https://www.f-kyo-shin.co.jp/movie" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="10 8 16 12 10 16 10 8"/><rect x="2" y="4" width="20" height="16" rx="3"/></svg></span>
+      <span class="tx"><b>動画で見るKYOSHIN</b><small>設備・技術・工場の様子をムービーで</small></span>
       <span class="arrow">→</span>
     </a>
   </section>
 
-  <!-- ===== 会社情報 ===== -->
-  <section class="sec">
-    <div class="sec-head rv"><span class="en">Company</span><span class="ja">会社情報</span></div>
-    <div class="ph-card rv" style="aspect-ratio:4/3">
-      <img src="assets/IMG_9044.JPG" alt="株式会社京伸の社屋" loading="lazy">
-      <span class="cap-chip">株式会社 京伸（大阪・大東市）</span>
+  <!-- ===== WORKS ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-1.jpg')">
+    <div class="sec-head rv"><span class="en">Works</span><span class="ja">こんなのつくってます</span></div>
+    <a class="show rv" id="slideshow" href="https://www.f-kyo-shin.co.jp/product/" target="_blank" rel="noopener" aria-label="製作品・実例紹介一覧へ">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_021.jpg" alt="" data-name="サッカーボール" data-meta="ステンレス|1枚曲げ・溶接|HL仕上げ" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_020.jpg" alt="" data-name="溶接トーチオブジェ" data-meta="ステンレス|サンダー仕上げ・溶接|バフ仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_018.jpg" alt="" data-name="トレー" data-meta="ステンレス・特殊鋼|溶接|鏡面仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_013.jpg" alt="" data-name="エビ管ダクト" data-meta="ステンレス|丸パイプレーザー・YAG溶接|バフ仕上げ" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_016.jpg" alt="" data-name="TOY(トイ)" data-meta="ステンレス|角パイプレーザー|組立" loading="lazy" referrerpolicy="no-referrer">
+      <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/10/pdt_1002_02.jpg" alt="" data-name="オブジェ" data-meta="ステンレス|切断・曲げ・溶接|塗装" loading="lazy" referrerpolicy="no-referrer">
+      <div class="shade" aria-hidden="true"></div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <span class="more">VIEW ALL →</span>
+      <div class="cap"><div class="name" id="capName"></div><div class="meta" id="capMeta"></div></div>
+    </a>
+  </section>
+
+  <!-- ===== 事業内容:横スワイプ ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_002_1.jpg')">
+    <div class="sec-head rv"><span class="en">Business</span><span class="ja">できること</span></div>
+    <div class="rail rv">
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/sheetmetal.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_019.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">01</span><span class="tx"><b>精密板金</b><small>多品種少量・試作もOK</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/plateworking.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_020.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">02</span><span class="tx"><b>溶接・製缶</b><small>小型〜大型フレーム架台</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/cutting_machining.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/10/pdt_1001_04.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">03</span><span class="tx"><b>切削・マシニング</b><small>五面加工機まで一貫対応</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/plan.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_016.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">04</span><span class="tx"><b>CAD</b><small>3次元CADで全図面展開</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/polish.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_018.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">05</span><span class="tx"><b>バフ仕上げ</b><small>鏡面・ヘアラインも自社対応</small></span>
+      </a>
+      <a class="rcard" href="https://www.f-kyo-shin.co.jp/production_control.html" target="_blank" rel="noopener">
+        <img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pdt_011.jpg" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="num">06</span><span class="tx"><b>生産管理</b><small>設計から出荷までワンストップ</small></span>
+      </a>
     </div>
-    <dl class="spec rv d1" style="margin-top:12px">
+    <div class="swipe-hint">← SWIPE →</div>
+  </section>
+
+  <!-- ===== PICK UP ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-2.jpg')">
+    <div class="sec-head rv"><span class="en">Pick up</span><span class="ja">最新トピック</span></div>
+
+    <a class="pick rv" href="https://www.f-kyo-shin.co.jp/pickup/438.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">NEW</span><b>複合旋盤「MULTUS U4000」導入</b><small>高品質・短納期対応をさらに強化</small></span>
+    </a>
+    <a class="pick rv d1" href="https://www.f-kyo-shin.co.jp/pickup/435.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2026/04/factory2_0409-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">NEW</span><b>ファイバーレーザー加工機「ENSIS RI3015」</b><small>加工精度と生産性がさらに向上</small></span>
+    </a>
+    <a class="pick rv d2" href="https://www.f-kyo-shin.co.jp/pickup/115.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_002_1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">設備</span><b>パイプレーザー加工機</b><small>複雑形状もフレキシブルに。高品質・短納期</small></span>
+    </a>
+    <a class="pick rv d3" href="https://www.f-kyo-shin.co.jp/pickup/116.html" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_001_1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">設備</span><b>ファイバー・YAGレーザー溶接機</b><small>異種金属溶接、0.3mm〜の薄板溶接が可能</small></span>
+    </a>
+    <a class="pick rv d4" href="https://k-max2023.com/" target="_blank" rel="noopener">
+      <span class="ph"><img src="https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2023/10/banner_fpa_mb.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></span>
+      <span class="tx"><span class="tag">自社製品</span><b>K-MAX|フレキシブルパワーアーム</b><small>1台でほぼ全部位を鍛えられる国産トレーニングマシン。板金技術を活かして自社製造中</small></span>
+    </a>
+  </section>
+
+  <!-- ===== SPEC ===== -->
+  <section class="sec bg" style="--bgimg:url('https://f-kyo-shin.co.jp/__wp/wp-content/uploads/2019/09/pickup_001_1.jpg')">
+    <div class="sec-head rv"><span class="en">Spec</span><span class="ja">対応素材・データ</span></div>
+    <dl class="spec rv">
+      <dt>MATERIAL</dt>
+      <dd>ステンレス / アルミ / 鉄 / 鋼板 ほか各種金属</dd>
+      <dt>PROCESS</dt>
+      <dd>パイプレーザー・レーザー加工・ベンダー加工・プレス・各種溶接・グラインダ・研磨処理・試作</dd>
+      <dt>CAD DATA</dt>
+      <dd>2D:DXF / DWG / DRG / jww 3D:SAT / STEP / IGES / x_t ほか</dd>
       <dt>ADDRESS</dt>
-      <dd>〒574-0064 大阪府大東市御領3丁目12番57号</dd>
-      <dt>TEL</dt>
-      <dd>072-889-5788（平日8:30〜17:30）</dd>
-      <dt>WORK</dt>
-      <dd>精密板金・レーザー加工・機械加工・溶接・製缶・バフ研磨・組立 ほか</dd>
+      <dd>〒574-0064 大阪府大東市御領3丁目12番57号<br>TEL 072-889-5788(平日9:00〜18:00)/ FAX 072-887-6598</dd>
     </dl>
   </section>
 
@@ -548,15 +520,15 @@
   </footer>
 </div>
 
-<nav class="dock" aria-label="リンク">
+<nav class="dock" aria-label="お問い合わせ">
   <div class="in">
-    <a class="call" href="https://www.instagram.com/kyoshin.osaka/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-      Instagram
+    <a class="call" href="tel:0728895788">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      電話する
     </a>
-    <a class="form" href="https://www.f-kyo-shin.co.jp/recruit.html" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      採用情報
+    <a class="line" href="https://lin.ee/5tJsTLC" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 6.9 7.7 7.5.3.06.7.2.8.46.07.24.05.6.02.85l-.13.78c-.04.23-.18.9.8.49s4.3-2.5 5.86-4.3c1.08-1.18 1.6-2.4 1.6-3.78C21.2 6.4 17.1 3 12 3z"/></svg>
+      公式LINE
     </a>
   </div>
 </nav>
@@ -570,16 +542,12 @@
     var cv=document.getElementById('fx'); if(!cv) return;
     var ctx=cv.getContext('2d');
     var DPR=Math.min(window.devicePixelRatio||1,2);
-    var W=0,H=0,sparks=[],last=0,BURSTS=2,MAXSPARKS=700;
+    var W=0,H=0,sparks=[],last=0;
 
     function size(){
       W=cv.width=Math.max(1,Math.floor(innerWidth*DPR));
       H=cv.height=Math.max(1,Math.floor(innerHeight*DPR));
       cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
-      /* 画面の広さに応じて火花の発生数・上限をスケール(大画面でも密度を維持) */
-      var scale=Math.min(7,Math.max(1,(innerWidth*innerHeight)/280000));
-      BURSTS=Math.max(1,Math.round(scale*0.6));
-      MAXSPARKS=Math.min(520,Math.round(190*scale));
     }
 
     function color(t){ // t:0=白熱 →1=赤
@@ -590,18 +558,18 @@
 
     function burst(x,y){
       // 一点から放射状に飛ぶ火花の束
-      var count=4+Math.floor(Math.random()*5);
+      var count=6+Math.floor(Math.random()*7);
       var baseAng=Math.random()*Math.PI*2;       // どの向きにも飛ぶ
-      var spread=0.5+Math.random()*1.1;          // 広がりもバラつかせる
+      var spread=0.8+Math.random()*1.6;          // 広がりもバラつかせる
       for(var i=0;i<count;i++){
         var ang=baseAng + (Math.random()-0.5)*spread;
-        var sp=(Math.random()*9+4)*DPR;
+        var sp=(Math.random()*7+3)*DPR;
         sparks.push({
           x:x,y:y,
           vx:Math.cos(ang)*sp*(Math.random()*0.6+0.7),
           vy:Math.sin(ang)*sp,
-          life:0, max:24+Math.random()*32,
-          r:(Math.random()*1.1+0.45)*DPR,
+          life:0, max:32+Math.random()*46,
+          r:(Math.random()*1.3+0.7)*DPR,
           hot:Math.random()
         });
       }
@@ -616,9 +584,10 @@
       ctx.globalCompositeOperation='lighter';
 
       // 発生:画面のランダムな位置で散発的にバースト
-      for(var e=0;e<BURSTS;e++){
-        if(Math.random()<0.5){
-          burst(Math.random()*W, H*(0.06+Math.random()*0.8));
+      var n=1+Math.floor(Math.random()*2);
+      for(var e=0;e<n;e++){
+        if(Math.random()<0.55){
+          burst(Math.random()*W, H*(0.12+Math.random()*0.76));
         }
       }
 
@@ -630,22 +599,19 @@
         p.x+=p.vx; p.y+=p.vy; p.life++;
         var f=1-(p.life/p.max);
         if(p.life>=p.max || p.x<-20||p.x>W+20||p.y>H+30){ sparks.splice(i,1); continue; }
-        var fl=0.72+Math.random()*0.28;        // ちらつき(冷えていく火花のリアルさ)
-        var a=f*fl;
-        var col=color(p.hot*0.6+(1-f)*0.4);
-        // 細く伸びる尾(動きのストリーク)
-        ctx.strokeStyle='rgba('+col+','+(a*0.7)+')';
-        ctx.lineWidth=Math.max(0.6,p.r*0.7);
+        var col=color(p.hot*0.7+(1-f)*0.3);
+        // 尾
+        ctx.strokeStyle='rgba('+col+','+(f*0.85)+')';
+        ctx.lineWidth=p.r;
         ctx.beginPath(); ctx.moveTo(px,py); ctx.lineTo(p.x,p.y); ctx.stroke();
-        // ごく小さな光(にじみ過ぎない)
-        ctx.fillStyle='rgba('+col+','+(a*0.22)+')';
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*1.5,0,Math.PI*2); ctx.fill();
-        // 白熱した小さな芯
-        ctx.fillStyle='rgba(255,240,214,'+a+')';
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.7,0,Math.PI*2); ctx.fill();
+        // 先端の輝き
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.9,0,Math.PI*2);
+        ctx.fillStyle='rgba('+col+','+f+')';
+        ctx.shadowBlur=8*DPR; ctx.shadowColor='rgba(255,170,40,'+(f*0.8)+')';
+        ctx.fill(); ctx.shadowBlur=0;
       }
       // 上限(負荷対策)
-      if(sparks.length>MAXSPARKS) sparks.splice(0,sparks.length-MAXSPARKS);
+      if(sparks.length>900) sparks.splice(0,sparks.length-900);
       requestAnimationFrame(frame);
     }
 
@@ -655,15 +621,6 @@
     addEventListener('load',size);
     setTimeout(size,300);
     var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,200);});
-  })();
-
-  /* ヒーロー動画を確実に再生(autoplayが効かない端末向けフォールバック) */
-  (function(){
-    var v=document.querySelector('.vcard video'); if(!v) return;
-    function go(){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}
-    go();
-    document.addEventListener('visibilitychange',function(){if(!document.hidden)go();});
-    ['touchstart','pointerdown','click','scroll'].forEach(function(ev){window.addEventListener(ev,go,{passive:true});});
   })();
 
   /* 流れるビッグテキスト */
