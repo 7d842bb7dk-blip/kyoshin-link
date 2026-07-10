@@ -209,6 +209,31 @@
   .bcard.grad p{color:rgba(255,255,255,.9)}
   .bcard.glow{border-color:rgba(255,38,48,.35);box-shadow:0 0 30px rgba(255,38,48,.12) inset}
 
+  /* ===== 数字で見る京伸 ===== */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{
+    background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);
+    padding:16px 16px 14px;backdrop-filter:blur(8px);position:relative;overflow:hidden;
+  }
+  .stat.wide{grid-column:1/-1}
+  .stat .lbl{font-size:10.5px;font-weight:700;color:var(--dim);letter-spacing:.06em;line-height:1.4}
+  .stat .val{font-family:var(--display);font-weight:700;line-height:1;margin-top:8px;color:#fff}
+  .stat .val .num{font-size:34px;color:var(--red)}
+  .stat .val .unit{font-size:15px;font-weight:700;margin-left:2px;color:#fff}
+  .stat .sub{font-size:10.5px;color:var(--faint);margin-top:6px;line-height:1.6}
+  /* 従業員数の推移(棒) */
+  .trend{margin-top:10px;display:flex;align-items:flex-end;gap:6px;height:96px}
+  .trend .bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+  .trend .bar span{font-size:10px;font-weight:700;color:#fff;font-family:var(--display)}
+  .trend .bar i{width:100%;max-width:22px;background:var(--grad);border-radius:5px 5px 0 0;display:block}
+  .trend .bar em{font-size:9px;color:var(--faint);font-style:normal;letter-spacing:-.02em}
+  /* 男女比・転職者の割合バー */
+  .ratio{margin-top:10px}
+  .ratio .track{display:flex;height:12px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08)}
+  .ratio .track b{display:block;height:100%}
+  .ratio .leg{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--dim)}
+  .ratio .leg b{color:#fff}
+
   /* ===== ボタン ===== */
   .btn{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--card-bd);border-radius:var(--r-md);padding:16px 18px;margin-bottom:12px;backdrop-filter:blur(8px);position:relative;overflow:hidden;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,box-shadow .2s}
   .btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,38,48,.25),transparent);transform:skewX(-20deg);transition:left .5s ease}
@@ -375,6 +400,82 @@
         <div class="emoji">🤝</div>
         <h3>とにかく仲が良い</h3>
         <p>部署も年齢も関係なくフラットな雰囲気。困ったら誰かがすぐ助けてくれる、チームワークが自慢の職場です。雰囲気はInstagramとTikTokでぜひチェックしてみてください👀</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 数字で見る京伸 ===== -->
+  <section class="sec">
+    <div class="sec-head rv"><span class="en">By the numbers</span><span class="ja">数字で見る京伸</span></div>
+    <div class="stats">
+      <div class="stat rv">
+        <div class="lbl">設立年</div>
+        <div class="val"><span class="num">2008</span><span class="unit">年</span></div>
+        <div class="sub">着実に成長を続けています</div>
+      </div>
+      <div class="stat rv d1">
+        <div class="lbl">平均年齢</div>
+        <div class="val"><span class="num">39.2</span><span class="unit">歳</span></div>
+        <div class="sub">若手からベテランまで活躍中</div>
+      </div>
+
+      <div class="stat wide rv d2">
+        <div class="lbl">取引実績のある企業数(産業機械・食品・医療関係など)</div>
+        <div class="val" style="font-size:20px;margin-top:10px">
+          2023 <span class="num" style="font-size:26px">231</span><span class="unit">社</span>&nbsp;→&nbsp;
+          2024 <span class="num" style="font-size:26px">238</span><span class="unit">社</span>&nbsp;→&nbsp;
+          2025 <span class="num" style="font-size:26px">241</span><span class="unit">社</span>
+        </div>
+        <div class="sub">単品・小ロット・短納期を得意とし、食品/薬品/半導体/産業機器/建築関係まで業界問わず幅広く対応</div>
+      </div>
+
+      <div class="stat rv">
+        <div class="lbl">年間で使用する金属材料の購入額(2025年)</div>
+        <div class="val"><span class="num" style="font-size:26px">¥236,419,297</span></div>
+        <div class="sub">ステンレス・鉄など</div>
+      </div>
+      <div class="stat rv d1">
+        <div class="lbl">保有する機械・設備の総台数</div>
+        <div class="val"><span class="num">91</span><span class="unit">台</span></div>
+        <div class="sub">溶接機・レーザー・マシニング・ベンダーなど</div>
+      </div>
+
+      <div class="stat wide rv d2">
+        <div class="lbl">従業員数の推移</div>
+        <div class="trend" aria-hidden="true">
+          <div class="bar"><span>5</span><i style="height:7%"></i><em>2008</em></div>
+          <div class="bar"><span>24</span><i style="height:35%"></i><em>2011</em></div>
+          <div class="bar"><span>26</span><i style="height:38%"></i><em>2014</em></div>
+          <div class="bar"><span>36</span><i style="height:52%"></i><em>2017</em></div>
+          <div class="bar"><span>46</span><i style="height:67%"></i><em>2020</em></div>
+          <div class="bar"><span>60</span><i style="height:87%"></i><em>2023</em></div>
+          <div class="bar"><span>69</span><i style="height:100%"></i><em>2025</em></div>
+        </div>
+      </div>
+
+      <div class="stat wide rv d3">
+        <div class="lbl">男女比率(全69名)</div>
+        <div class="ratio">
+          <div class="track"><b style="width:87%;background:#3fb4d6"></b><b style="width:13%;background:#ff5560"></b></div>
+          <div class="leg"><span>男性 <b>60名(87%)</b></span><span>女性 <b>9名(13%)</b></span></div>
+        </div>
+      </div>
+
+      <div class="stat wide rv d4">
+        <div class="lbl">入社時のバックグラウンド</div>
+        <div class="ratio">
+          <div class="track">
+            <b style="width:61%;background:#ff5a3c"></b>
+            <b style="width:26%;background:#3fb4d6"></b>
+            <b style="width:6%;background:#8a6bd6"></b>
+            <b style="width:7%;background:#9aa2ad"></b>
+          </div>
+          <div class="leg" style="flex-wrap:wrap;gap:4px 12px">
+            <span>同業種(製造業) <b>42名</b></span><span>異業種 <b>18名</b></span>
+            <span>新卒入社 <b>4名</b></span><span>その他 <b>5名</b></span>
+          </div>
+        </div>
+        <div class="sub">未経験・異業種からの転職も多数。若いチームで一から育てます</div>
       </div>
     </div>
   </section>
