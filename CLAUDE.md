@@ -6,12 +6,14 @@
 公式サイト: https://www.f-kyo-shin.co.jp/
 
 ## 公開先(重要)
-- すでに GitHub Pages で公開済み。リポジトリ名は「京神リンク」(kyoshin-link)、
-  オーナーはユーザーの GitHub アカウント(7d842bb7DK-ブリップ)。branch: main / root
-- リポジトリには過去の実験ファイル(kyoshin-link-site.zip、資産フォルダ、netlify.toml等)が
-  残っている。整理してよいが index.html と .nojekyll は必須
-- 更新フロー: このフォルダを git clone 済みなら、index.html を差し替えて
-  commit → push で本番反映(数分)
+- GitHub Pages で公開済み。https://github.com/7d842bb7dk-blip/kyoshin-link
+  branch: main / root。index.html と .nojekyll は必須
+- このフォルダは origin に接続済み(2026-07-15 設定)。認証は Git Credential Manager。
+  更新フロー: index.html を編集 → commit → push で本番反映(数分)
+- 過去の実験ファイル(index_3.html / kyoshin-link-site.zip / netlify.toml)は整理済み。
+  assets/ の写真19枚は TODO#2(画像ローカル化)の素材として残してある(どのHTMLからも未参照)
+- 注意: ブラウザから手動アップロードしていた頃、新版が index_3.html という別名で入り、
+  本番の index.html が旧版のまま数日間放置されていた事故がある。push 後は必ず反映を確認する
 
 ## ユーザーについて
 - Git・ターミナル操作は不慣れ。専門用語を避け、コマンドは全部こちらで実行する前提で
@@ -40,6 +42,7 @@ Spec / SNS / 下部固定バー(電話 072-889-5788 / 公式LINE)
 
 ## TODO(優先順)
 1. 本番で火花が表示されるか確認。ダメなら CSS-only 方式へ
+   ※ 2026-07-15 まで本番は旧版 index.html を配信していたため、これまでの「見えない」報告は
+     旧版を見ていた可能性がある。新版反映後にあらためて確認すること
 2. 画像・動画のローカル化(現在 f-kyo-shin.co.jp からのホットリンク。assets/ に取り込み相対参照へ)
-3. リポジトリの不要ファイル整理
-4. OGP画像(og:image)の設定
+3. OGP画像(og:image)の設定
