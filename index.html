@@ -336,6 +336,18 @@
   .dock .line{background:#06c755;color:#fff;box-shadow:0 8px 24px rgba(6,199,85,.4)}
   .dock svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
+  /* ===== PC表示:画面が広いときだけ全体を拡大(スマホは従来どおり) =====
+     背景(#fx/.fxlines)は画面全体固定のため対象外。コンテンツ列のみ拡大する */
+  @media (min-width:900px){
+    .wrap,.dock .in{zoom:1.35}
+  }
+  @media (min-width:1300px){
+    .wrap,.dock .in{zoom:1.6}
+  }
+  @media (min-width:1700px){
+    .wrap,.dock .in{zoom:1.85}
+  }
+
   /* 低減設定は無視:アニメーションは常に有効 */
   @media (prefers-reduced-motion:reduce){
     /* intentionally empty — ユーザー要望により低減効果を無視 */
