@@ -598,8 +598,8 @@
     (function(){
       var g=glow.getContext('2d');
       var gr=g.createRadialGradient(32,32,0,32,32,32);
-      gr.addColorStop(0,'rgba(255,225,170,1)');
-      gr.addColorStop(.4,'rgba(255,170,40,.5)');
+      gr.addColorStop(0,'rgba(255,225,170,.85)');
+      gr.addColorStop(.4,'rgba(255,170,40,.3)');
       gr.addColorStop(1,'rgba(255,120,20,0)');
       g.fillStyle=gr;g.fillRect(0,0,64,64);
     })();
@@ -650,7 +650,7 @@
       // 発生:画面のランダムな位置で散発的にバースト
       var n=1+Math.floor(Math.random()*2);
       for(var e=0;e<n;e++){
-        if(Math.random()<0.55){
+        if(Math.random()<0.42){
           burst(Math.random()*W, H*(0.12+Math.random()*0.76));
         }
       }
@@ -671,8 +671,8 @@
         // 先端の輝き(グローは事前描画スプライトを貼る)
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.9,0,Math.PI*2);
         ctx.fillStyle='rgba('+col+','+f+')'; ctx.fill();
-        var gsz=p.r*7;
-        ctx.globalAlpha=f*0.8;
+        var gsz=p.r*4.5;
+        ctx.globalAlpha=f*0.45;
         ctx.drawImage(glow,p.x-gsz,p.y-gsz,gsz*2,gsz*2);
         ctx.globalAlpha=1;
       }
